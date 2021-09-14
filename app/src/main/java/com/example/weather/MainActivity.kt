@@ -195,11 +195,7 @@ msharedprefrences=getSharedPreferences(Constants.PREFERENCE_NAME,Context.MODE_PR
             val retrofit: Retrofit = Retrofit.Builder()
                 // API base URL.
                 .baseUrl(Constants.BASE_URL)
-                /** Add converter factory for serialization and deserialization of objects. */
-                /**
-                 * Create an instance using a default {@link Gson} instance for conversion. Encoding to JSON and
-                 * decoding from JSON (when no charset is specified by a header) will use UTF-8.
-                 */
+
                 .addConverterFactory(GsonConverterFactory.create())
                 /** Create the Retrofit instances. */
                 .build()
@@ -207,10 +203,7 @@ msharedprefrences=getSharedPreferences(Constants.PREFERENCE_NAME,Context.MODE_PR
 
             // TODO (STEP 5: Further step for API call)
             // START
-            /**
-             * Here we map the service interface in which we declares the end point and the API type
-             *i.e GET, POST and so on along with the request parameter which are required.
-             */
+
             val service: WeatherService =
                 retrofit.create<WeatherService>(WeatherService::class.java)
 
